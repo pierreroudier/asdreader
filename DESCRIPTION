@@ -1,0 +1,18 @@
+Package: asdreader
+Type: Package
+Title: Reads ASD Binary Files in R
+Version: 0.1
+Date: 2015-09-21
+Authors@R: person("Pierre", "Roudier", email = "roudierp@landcareresearch.co.nz", role = c("aut", "cre"))
+Description: This package reads spectroscopy data created using ASD instruments
+    such as the FieldSpec in R.
+URL: http://github.com
+Depends:
+    R (>= 3.0)
+License: GPL-3
+LazyData: TRUE
+Collate:
+    'get-metadata.r'
+    'get-spectrum.r'
+    'asdreader.r'
+    'data.r'
