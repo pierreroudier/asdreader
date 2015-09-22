@@ -36,6 +36,6 @@ asd_file() %>%
   plot(type = 'l')
 ```
 
-This package has been developed working on `*.asd` files in version 8 (that's my setup), along with some of the documentation that can be found online.
+This package has been developed working on `*.asd` files in version 8 (that's my setup), along with some of the documentation that can be found online. It could probably become better with help from people with different setups/file format versions. 
 
 Contributions welcome!
