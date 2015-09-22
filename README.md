@@ -36,6 +36,6 @@ asd_file() %>%
   plot(type = 'l')
 ```
 
-This package has been developed working on `*.asd` files in version 8 (that's my setup), along with some of the documentation that can be found online. In particular, reading code from @serbinsh and @antoinestevens proved to be helpful.
+This package has been developed working on `*.asd` files in version 8 (that's my setup), along with some of the documentation that can be found online. In particular, reading code from @serbinsh ([here](https://github.com/serbinsh/R-FieldSpectra)) and @antoinestevens ([here](https://github.com/antoinestevens/prospectr)) proved to be helpful.
 
 I'm sure this thing could probably become better with help from people with different setups/file format versions --- contributions welcome!
