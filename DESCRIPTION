@@ -1,6 +1,6 @@
 Package: asdreader
 Type: Package
-Title: Reads ASD Binary Files in R
+Title: Reading ASD Binary Files in R
 Version: 0.1
 Date: 2015-09-21
 Authors@R: person("Pierre", "Roudier", email = "roudierp@landcareresearch.co.nz", role = c("aut", "cre"))
