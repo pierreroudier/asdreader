@@ -6,6 +6,10 @@ Reading ASD Binary Files in R
 
 This package implements a simple reader for spectroscopy data collected using ASD (now PAN Analytics, Inc.) visible near-infrared spectrometers, and stored using the ASD format (which is documented [here](http://support.asdi.com/Document/Documents.aspx)).
 
+The spectra can be extracted from the ASD file as raw (DN),
+white reference, radiance, or reflectance. Additionally, the metadata information contained 
+in the ASD file header can also be accessed.
+
 ## Installation
 
 It's easiest to use the `devtools` package to install `asdreader`:

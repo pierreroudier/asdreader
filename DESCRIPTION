@@ -2,11 +2,15 @@ Package: asdreader
 Type: Package
 Title: Reading ASD Binary Files in R
 Version: 0.1
-Date: 2015-09-21
+Date: 2015-09-24
 Authors@R: person("Pierre", "Roudier", email = "roudierp@landcareresearch.co.nz", role = c("aut", "cre"))
-Description: This package reads spectroscopy data created using ASD instruments
-    such as the FieldSpec in R.
-URL: http://github.com
+Description: A simple driver that reads spectroscopy data created using ASD
+    instruments such as the FieldSpec in R. The spectra can be extracted
+    from the ASD file as raw (DN), white reference, radiance, or reflectance.
+    Additionally, the metadata information contained in the ASD file header can
+    also be accessed.
+URL: https://github.com/pierreroudier/asdreader
+BugReports: https://github.com/pierreroudier/asdreader/issues
 Depends:
     R (>= 3.0)
 License: GPL-3
