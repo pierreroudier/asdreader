@@ -2,7 +2,7 @@
 
 #' @title Reads ASD Binary Files in R.
 #'
-#' @description \code{asdreader} implements a simple reader to read spectroscopy data collected using ASD (now PAN Analytics, Inc.) visible near-infrared spectrometers, and stored using the ASD format (which is documented here: \url{http://support.asdi.com/Document/Viewer.aspx?id=95)}.
+#' @description \code{asdreader} implements a simple reader to read spectroscopy data collected using ASD (now PAN Analytics, Inc.) visible near-infrared spectrometers, and stored using the ASD format (which is documented here: \url{http://support.asdi.com/Document/Viewer.aspx?id=95}.
 #'
 #' The spectra can be extracted from the ASD file as raw (DN), white reference, radiance, or reflectance. Additionally, the metadata information contained in the ASD file header can also be accessed.
 #'
