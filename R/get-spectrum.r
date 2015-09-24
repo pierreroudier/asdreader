@@ -19,7 +19,7 @@
 .get_spec <- function(con, md) {
   seek(con, 484)
   # Raw spectrum
-  spec <- readBin(con, what = md$data_format, n = md$channels)
+  spec <- readBin(con, what = md$data_format, n = md$channels, endian = "little")
 
   # White reference flag
   # seek(con, 17692) = 484 + 8 * md$channels
@@ -27,22 +27,22 @@
 
   # White reference time
   # seek(con, 17693) = 484 + 8 * md$channels + 1
-  wr_time <- readBin(con, integer(), size = 8)
+  wr_time <- readBin(con, integer(), size = 8, endian = "little")
 
   # Spectrum time
   # seek(con, 17701) = 484 + 8 * md$channels + 9
-  spec_time <- readBin(con, integer(), size = 8)
+  spec_time <- readBin(con, integer(), size = 8, endian = "little")
 
   # Spectrum description length
   # seek(con, 17709) = 484 + 8 * md$channels + 17
-  spec_description_length <- readBin(con, integer(), size = 2)
+  spec_description_length <- readBin(con, integer(), size = 2, endian = "little")
   # Spectrum description
   # seek(con, 17710) # = 484 + 8 * md$channels + 19
-  spec_description <- readBin(con, character(), size = spec_description_length)
+  spec_description <- readBin(con, character(), size = spec_description_length, endian = "little")
 
   # White reference
   # seek(con, 17712) = 484 + 8 * md$channels + 20
-  wr <- readBin(con, what = md$data_format, n = md$channels)
+  wr <- readBin(con, what = md$data_format, n = md$channels, endian = "little")
 
   res <- list(spectrum = spec, wr = wr)
 }

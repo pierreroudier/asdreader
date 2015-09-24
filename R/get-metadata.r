@@ -1,22 +1,22 @@
 .get_co <- function(con) {
   seek(con, where = 0, origin = "start", rw = "r")
-  readBin(con, what = character(), size = 3, endian = .Platform$endian)
+  readBin(con, what = character(), size = 3, endian = "little")
 }
 
 .get_comments <- function(con) {
   seek(con, where = 3, origin = "start", rw = "r")
-  readBin(con, what = character(), size = 157, endian = .Platform$endian)
+  readBin(con, what = character(), size = 157, endian = "little")
 }
 
 .get_when <- function(con) {
   seek(con, 160)
-  tm <- readBin(con, "integer", size = 2, n = 6)
+  tm <- readBin(con, "integer", size = 2, n = 6, endian = "little")
   ISOdatetime(tm[6] + 1900, tm[5] + 1, tm[4], tm[3], tm[2], tm[1])
 }
 
 .get_program_version <- function(con) {
   seek(con, 178)
-  res <- readBin(con, what = integer(), size = 1, endian = .Platform$endian)
+  res <- readBin(con, what = integer(), size = 1)
   major <- bitwShiftR(res, 4)
   minor <- bitwAnd(res, 7)
   paste0(major, '.', minor)
@@ -38,7 +38,7 @@
 
 .get_dc_time <- function(con) {
   seek(con, 182)
-  res <- readBin(con, integer(), size = 4)
+  res <- readBin(con, integer(), size = 4, endian = "little")
   as.POSIXct(res, origin = "1970-01-01")
 }
 
@@ -52,18 +52,18 @@
 
 .get_ref_time <- function(con) {
   seek(con, 187)
-  res <- readBin(con, integer(), size = 4)
+  res <- readBin(con, integer(), size = 4, endian = "little")
   as.POSIXct(res, origin = "1970-01-01")
 }
 
 .get_ch1_wavel <- function(con) {
   seek(con, 191)
-  readBin(con, numeric(), size = 4)
+  readBin(con, numeric(), size = 4, endian = "little")
 }
 
 .get_wavel_step <- function(con) {
   seek(con, 195)
-  readBin(con, numeric(), size = 4)
+  readBin(con, numeric(), size = 4, endian = "little")
 }
 
 .get_data_format <- function(con) {
@@ -76,38 +76,38 @@
 
 .get_channels <- function(con) {
   seek(con, 204)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_it <- function(con) {
   seek(con, 390)
-  readBin(con, integer(), size = 4)
+  readBin(con, integer(), size = 4, endian = "little")
 }
 
 .get_fo <- function(con) {
   seek(con, 394)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_dcc <- function(con) {
   seek(con, 396)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_calibration <- function(con) {
   seek(con, 398)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_instrument_num <- function(con) {
   seek(con, 400)
-  res <- readBin(con, integer(), size = 2)
+  res <- readBin(con, integer(), size = 2, endian = "little")
   as.character(res)
 }
 
 .get_ip_numbits <- function(con) {
   seek(con, 418)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 # Flag codes:
@@ -121,22 +121,22 @@
 #
 .get_flags <- function(con) {
   seek(con, 421)
-  readBin(con, integer(), size = 4)
+  readBin(con, integer(), size = 4, endian = "little")
 }
 
 .get_dc_count <- function(con) {
   seek(con, 425)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_ref_count <- function(con) {
   seek(con, 427)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_sample_count <- function(con) {
   seek(con, 429)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_instrument <- function(con) {
@@ -148,37 +148,37 @@
 
 .get_bulb <- function(con) {
   seek(con, 432)
-  readBin(con, integer(), size = 4)
+  readBin(con, integer(), size = 4, endian = "little")
 }
 
 .get_swir1_gain <- function(con) {
   seek(con, 436)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_swir2_gain <- function(con) {
   seek(con, 438)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_swir1_offset <- function(con) {
   seek(con, 440)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_swir2_offset <- function(con) {
   seek(con, 442)
-  readBin(con, integer(), size = 2)
+  readBin(con, integer(), size = 2, endian = "little")
 }
 
 .get_splice1_wavelength  <- function(con) {
   seek(con, 444)
-  readBin(con, numeric(), size = 4)
+  readBin(con, numeric(), size = 4, endian = "little")
 }
 
 .get_splice2_wavelength  <- function(con) {
   seek(con, 448)
-  readBin(con, numeric(), size = 4)
+  readBin(con, numeric(), size = 4, endian = "little")
 }
 
 .get_metadata <- function(con) {
