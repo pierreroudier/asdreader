@@ -11,7 +11,7 @@ get_metadata(f)
 }
 \value{
 a list storing the metadata information in the ASD header,
-as documented here: \url{http://support.asdi.com/Document/Documents.aspx}
+as documented here: \url{http://support.asdi.com/Document/Viewer.aspx?id=95}
 }
 \description{
 Reads metadata header from ASD file

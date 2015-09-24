@@ -17,7 +17,7 @@ NULL
 #' @author Pierre Roudier
 #' @param f character, path to ASD file
 #' @return a list storing the metadata information in the ASD header,
-#' as documented here: \url{http://support.asdi.com/Document/Documents.aspx}
+#' as documented here: \url{http://support.asdi.com/Document/Viewer.aspx?id=95}
 #' @examples
 #' asd_fn <- asd_file()
 #' md <- get_metadata(asd_fn)
