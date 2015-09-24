@@ -1,3 +1,5 @@
+[![Travis-CI Build Status](https://travis-ci.org/pierreroudier/asdreader.svg?branch=master)](https://travis-ci.org/pierreroudier/asdreader)
+
 # asdreader
 
 Reading ASD Binary Files in R
