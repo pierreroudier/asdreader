@@ -4,14 +4,13 @@
 \name{asdreader}
 \alias{asdreader}
 \alias{asdreader-package}
-\title{Reads ASD Binary Files in R.
-
-\code{asdreader} is a simple driver to read spectroscopy data collected
-using ASD FieldSpec spectrometer and stored in \code{*.asd} files.}
+\title{Reads ASD Binary Files in R.}
 \description{
-Reads ASD Binary Files in R.
+\code{asdreader} implements a simple reader to read spectroscopy data collected using ASD (now PAN Analytics, Inc.) visible near-infrared spectrometers, and stored using the ASD format (which is documented here: \url{http://support.asdi.com/Document/Viewer.aspx?id=95)}.
 
-\code{asdreader} is a simple driver to read spectroscopy data collected
-using ASD FieldSpec spectrometer and stored in \code{*.asd} files.
+The spectra can be extracted from the ASD file as raw (DN), white reference, radiance, or reflectance. Additionally, the metadata information contained in the ASD file header can also be accessed.
+}
+\author{
+Pierre Roudier
 }
 
