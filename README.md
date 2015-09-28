@@ -1,5 +1,6 @@
 [![Travis-CI Build Status](https://travis-ci.org/pierreroudier/asdreader.svg?branch=master)](https://travis-ci.org/pierreroudier/asdreader)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/asdreader)](http://cran.r-project.org/web/packages/asdreader)
+[![Total_Downloads](http://cranlogs.r-pkg.org/badges/asdreader)](http://cran.r-project.org/web/packages/asdreader)
 
 # asdreader
 
