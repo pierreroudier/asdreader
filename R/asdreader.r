@@ -54,8 +54,9 @@ get_spectra <- function(f, type = "reflectance") {
   }
 
   res <- lapply(f, function(fn) {
+
     # Open connection to file
-    con <- file(f, "rb")
+    con <- file(fn, "rb")
 
     # Get metadata from file
     md <- .get_metadata(con)
