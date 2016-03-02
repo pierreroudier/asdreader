@@ -22,6 +22,7 @@ NULL
 #' asd_fn <- asd_file()
 #' md <- get_metadata(asd_fn)
 #' names(md)
+#'
 get_metadata <- function(f) {
   # Open connection to file
   con <- file(f, "rb")
@@ -44,9 +45,25 @@ get_metadata <- function(f) {
 #' @param type a character vector, which type of spectra to return. \code{"reflectance"}, \code{"raw"}, \code{"white_reference"} are currently supported
 #' @return a matrix of the spectrum contained in the ASD file(s)
 #' @examples
+#'
+#' # Get the path to the demo file
+#'
 #' asd_fn <- asd_file()
-#' m <- get_spectra(asd_fn)
-#' plot(m[1,], type = 'l')
+#' print(asd_fn)
+#'
+#' # Example with one file name
+#'
+#' m1 <- get_spectra(asd_fn)
+#' matplot(t(m1), type = 'l')
+#'
+#' # Example with a vector of file names
+#'
+#' asd_fns <- rep(asd_fn, times = 4)
+#' print(asd_fns) # (in this case, 4 times the same file)
+#'
+#' m2 <- get_spectra(asd_fns)
+#' matplot(t(m2), type = 'l')
+#'
 get_spectra <- function(f, type = "reflectance") {
 
   if (length(type) > 1) {
