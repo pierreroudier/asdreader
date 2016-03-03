@@ -5,11 +5,11 @@ Version: 0.1-2
 Date: 2016-03-03
 Authors@R: person("Pierre", "Roudier", email = "roudierp@landcareresearch.co.nz", role = c("aut", "cre"))
 Description: A simple driver that reads binary data created by the ASD Inc.
-    portable spectrometer instruments, such as the FieldSpec (for more information
-    about these instruments, see <http://www.asdi.com/products/fieldspec-spectroradiometers>).
-    Spectral data can be extracted from the ASD files as raw (DN), white reference, radiance,
-    or reflectance. Additionally, the metadata information contained in the ASD file header
-    can also be accessed.
+    portable spectrometer instruments, such as the FieldSpec (for more information,
+    see <http://www.asdi.com/products/fieldspec-spectroradiometers>). Spectral data
+    can be extracted from the ASD files as raw (DN), white reference, radiance, or
+    reflectance. Additionally, the metadata information contained in the ASD file
+    header can also be accessed.
 URL: http://github.com/pierreroudier/asdreader
 BugReports: http://github.com/pierreroudier/asdreader/issues
 Depends:
