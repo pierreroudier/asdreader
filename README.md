@@ -16,11 +16,13 @@ in the ASD file header can also be accessed.
 
 ## Installation
 
-It's easiest to use the `devtools` package to install `asdreader`:
+It's easiest to install `asdreader` from CRAN:
+
+`install.packages("asdreader")`
+
+Alternatively, you can use the `devtools` package to install `asdreader`:
 
 `devtools::install_github("pierreroudier/asdreader")`
-
-I haven't come around to submit this on CRAN yet.
 
 ## Use
 
