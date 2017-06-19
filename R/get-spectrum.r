@@ -23,25 +23,24 @@
 
   # White reference flag
   # seek(con, 17692) = 484 + 8 * md$channels
-  wr_flag <- readBin(con, what = logical(), size = 1)
+  wr_flag <- readBin(con, what = logical(), size = 2)
 
   # White reference time
-  # seek(con, 17693) = 484 + 8 * md$channels + 1
+  # seek(con, 17694) = 484 + 8 * md$channels + 2
   wr_time <- readBin(con, integer(), size = 8, endian = "little")
 
   # Spectrum time
-  # seek(con, 17701) = 484 + 8 * md$channels + 9
+  # seek(con, 17702) = 484 + 8 * md$channels + 10
   spec_time <- readBin(con, integer(), size = 8, endian = "little")
 
   # Spectrum description length
-  # seek(con, 17709) = 484 + 8 * md$channels + 17
+  # seek(con, 17710) = 484 + 8 * md$channels + 18
   spec_description_length <- readBin(con, integer(), size = 2, endian = "little")
   # Spectrum description
-  # seek(con, 17710) # = 484 + 8 * md$channels + 19
-  spec_description <- readBin(con, character(), size = spec_description_length, endian = "little")
+  # seek(con, 17712) # = 484 + 8 * md$channels + 20
+  spec_description <- readChar(con, nchars = spec_description_length)
 
   # White reference
-  # seek(con, 17712) = 484 + 8 * md$channels + 20
   wr <- readBin(con, what = md$data_format, n = md$channels, endian = "little")
 
   res <- list(spectrum = spec, wr = wr)
