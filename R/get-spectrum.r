@@ -48,31 +48,14 @@
 
 .process_spectra <- function(spec, md, type) {
   if (type == 'reflectance') {
-    if (md$data_type == 'reflectance') {
-      res <- spec$spectrum
-    } else if (md$data_type == 'raw') {
       res <- .normalise_spectrum(spec$spectrum, md) / .normalise_spectrum(spec$wr, md)
-    } else {
-      stop(paste0('File only contains data of type ', md$data_type, '.'))
-    }
   } else if (type == 'radiance') {
-    if (md$data_type == 'radiance') {
-      res <- spec$spectrum
-    } else if (md$data_type == 'raw') {
       res <- .normalise_spectrum(spec$spectrum, md)
-    } else {
-      stop(paste0('File only contains data of type ', md$data_type, '.'))
-    }
   } else if (type == 'raw') {
-    if (md$data_type == 'raw') {
       res <- spec$spectrum
-    } else {
-      stop(paste0('File only contains data of type ', md$data_type, '.'))
-    }
   } else if (type == 'white_reference') {
     res <- .normalise_spectrum(spec$wr, md)
   } else {
     stop('Invalid type.')
   }
 }
-
