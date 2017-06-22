@@ -90,6 +90,7 @@ get_spectra <- function(f, type = "reflectance") {
     # Return spectrum with proper column names
     res <- matrix(res, ncol = length(res))
     colnames(res) <- .get_wavelengths(md)
+    rownames(res) <- fn
 
     res
   })
