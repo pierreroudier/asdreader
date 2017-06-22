@@ -12,6 +12,7 @@
 NULL
 
 #' @name get_metadata
+#' @description Retrieves the ASD file metadata and stores it in a list.
 #' @export
 #' @title Reads metadata header from ASD file
 #' @author Pierre Roudier
@@ -38,7 +39,8 @@ get_metadata <- function(f) {
 }
 
 #' @name get_spectra
-#' @title Reads reflectance from ASD file
+#' @title Reads ASD files
+#' @description Reads either the reflectance, raw DN, or white reference data stored in one or more ASD files.
 #' @export
 #' @author Pierre Roudier
 #' @param f a vector of paths to ASD file(s)

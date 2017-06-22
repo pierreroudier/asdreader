@@ -2,6 +2,7 @@
 
 #' @name soil.asd
 #' @title Sample ASD file containing a soil spectrum
+#' @description Sample ASD binary file. See Details section for more information.
 #' @docType data
 #' @format A binary ASD file
 #' @details The spectrum contained in this ASD file was collected
@@ -18,6 +19,7 @@ NULL
 
 #' @name asd_file
 #' @title Get location of a sample ASD file
+#' @description Utility function that retrieves the location of the sample ASD binary file on disc.
 #' @return a character vector storing the location of the sample ASD file
 #' @examples
 #' fn <- asd_file()
