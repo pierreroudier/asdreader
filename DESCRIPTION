@@ -1,7 +1,7 @@
 Package: asdreader
 Type: Package
 Title: Reading ASD Binary Files in R
-Version: 0.1-2
+Version: 0.1.3.9000
 Date: 2016-03-03
 Authors@R: person("Pierre", "Roudier", email = "roudierp@landcareresearch.co.nz", role = c("aut", "cre"))
 Description: A simple driver that reads binary data created by the ASD Inc.
