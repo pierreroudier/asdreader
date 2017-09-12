@@ -48,7 +48,7 @@
 
 .process_spectra <- function(spec, md, type) {
   if (type == 'reflectance') {
-    if (md$data_type == 'reflectance') {
+    if (md$data_type %in% c('radiance', 'reflectance') ) {
       res <- spec$spectrum / spec$wr
     } else if (md$data_type == 'raw') {
       res <- .normalise_spectrum(spec$spectrum, md) / .normalise_spectrum(spec$wr, md)
@@ -56,7 +56,7 @@
       stop(paste0('File only contains data of type ', md$data_type, '.'))
     }
   } else if (type == 'radiance') {
-    if (md$data_type == 'radiance') {
+    if (md$data_type %in% c('radiance', 'reflectance')) {
       res <- spec$spectrum
     } else if (md$data_type == 'raw') {
       res <- .normalise_spectrum(spec$spectrum, md)
@@ -70,6 +70,9 @@
       stop(paste0('File only contains data of type ', md$data_type, '.'))
     }
   } else if (type == 'white_reference') {
+    if (md$data_type %in% c('radiance', 'reflectance')) {
+      res <- spec$wr
+    } else if (md$data_type == 'raw') {
     res <- .normalise_spectrum(spec$wr, md)
   } else {
     stop('Invalid type.')
