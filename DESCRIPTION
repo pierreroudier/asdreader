@@ -1,9 +1,12 @@
 Package: asdreader
 Type: Package
 Title: Reading ASD Binary Files in R
-Version: 0.1-2
-Date: 2016-03-03
-Authors@R: person("Pierre", "Roudier", email = "roudierp@landcareresearch.co.nz", role = c("aut", "cre"))
+Version: 0.1.2.9000
+Date: 2017-06-21
+Authors@R: c(
+    person("Pierre", "Roudier", email = "roudierp@landcareresearch.co.nz", role = c("aut", "cre")),
+    person("Etienne", "Lalibert'{e}", email = NULL, role = c("ctb"))
+    )
 Description: A simple driver that reads binary data created by the ASD Inc.
     portable spectrometer instruments, such as the FieldSpec (for more information,
     see <http://www.asdi.com/products/fieldspec-spectroradiometers>). Spectral data
@@ -21,3 +24,4 @@ Collate:
     'get-spectrum.r'
     'asdreader.r'
     'data.r'
+RoxygenNote: 6.0.1

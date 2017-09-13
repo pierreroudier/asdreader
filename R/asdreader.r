@@ -2,7 +2,7 @@
 
 #' @title Reads ASD Binary Files in R.
 #'
-#' @description \code{asdreader} implements a simple reader to read spectroscopy data collected using ASD (now PAN Analytics, Inc.) visible near-infrared spectrometers, and stored using the ASD format (which is documented here: \url{http://support.asdi.com/Document/Viewer.aspx?id=95}.
+#' @description \code{asdreader} implements a simple reader to read spectroscopy data collected using ASD (now PAN Analytics, Inc.) visible near-infrared spectrometers, and stored using the ASD format (which is documented here: \url{http://support.asdi.com/Document/Documents.aspx}.
 #'
 #' The spectra can be extracted from the ASD file as raw (DN), white reference, radiance, or reflectance. Additionally, the metadata information contained in the ASD file header can also be accessed.
 #'
@@ -12,12 +12,13 @@
 NULL
 
 #' @name get_metadata
+#' @description Retrieves the ASD file metadata and stores it in a list.
 #' @export
 #' @title Reads metadata header from ASD file
 #' @author Pierre Roudier
 #' @param f character, path to ASD file
 #' @return a list storing the metadata information in the ASD header,
-#' as documented here: \url{http://support.asdi.com/Document/Viewer.aspx?id=95}
+#' as documented here: \url{http://support.asdi.com/Document/Documents.aspx}
 #' @examples
 #' asd_fn <- asd_file()
 #' md <- get_metadata(asd_fn)
@@ -38,7 +39,8 @@ get_metadata <- function(f) {
 }
 
 #' @name get_spectra
-#' @title Reads reflectance from ASD file
+#' @title Reads ASD files
+#' @description Reads either the reflectance, raw DN, or white reference data stored in one or more ASD files.
 #' @export
 #' @author Pierre Roudier
 #' @param f a vector of paths to ASD file(s)
@@ -90,6 +92,7 @@ get_spectra <- function(f, type = "reflectance") {
     # Return spectrum with proper column names
     res <- matrix(res, ncol = length(res))
     colnames(res) <- .get_wavelengths(md)
+    rownames(res) <- fn
 
     res
   })

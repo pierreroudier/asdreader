@@ -1,3 +1,7 @@
+# Suite of utility functions to get
+# the various metadata elements
+#
+
 .get_co <- function(con) {
   seek(con, where = 0, origin = "start", rw = "r")
   readBin(con, what = character(), size = 3, endian = "little")
@@ -264,6 +268,7 @@
 
   # ignoring SmartDetector data for now
 
+  # Return the metadata as a list
   md
 }
 
