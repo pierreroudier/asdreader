@@ -77,4 +77,5 @@
   } else {
     stop('Invalid type.')
   }
+ }
 }
