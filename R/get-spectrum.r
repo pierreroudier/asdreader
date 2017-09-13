@@ -58,8 +58,7 @@
 
   # If reflectance data requested
   if (type == 'reflectance') {
-
-    if (md$data_type == 'reflectance') {
+    if (md$data_type %in% c('radiance', 'reflectance') ) {
       res <- spec$spectrum / spec$wr
     } else if (md$data_type == 'raw') {
       res <- .normalise_spectrum(spec$spectrum, md) / .normalise_spectrum(spec$wr, md)
@@ -69,7 +68,7 @@
 
   # If radiance data requested
   } else if (type == 'radiance') {
-    if (md$data_type == 'radiance') {
+    if (md$data_type %in% c('radiance', 'reflectance')) {
       res <- spec$spectrum
     } else if (md$data_type == 'raw') {
       res <- .normalise_spectrum(spec$spectrum, md)
@@ -87,10 +86,14 @@
 
   # If white reference requested
   } else if (type == 'white_reference') {
+    if (md$data_type %in% c('radiance', 'reflectance')) {
+      res <- spec$wr
+    } else if (md$data_type == 'raw') {
     res <- .normalise_spectrum(spec$wr, md)
 
   # Otherwise just throw an error
   } else {
     stop('Invalid type of data requested.')
   }
+ }
 }
